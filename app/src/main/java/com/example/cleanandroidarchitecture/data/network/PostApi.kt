@@ -1,4 +1,4 @@
-package com.example.cleanandroidarchitecture.data
+package com.example.cleanandroidarchitecture.data.network
 
 import com.example.cleanandroidarchitecture.model.Post
 import io.reactivex.Observable

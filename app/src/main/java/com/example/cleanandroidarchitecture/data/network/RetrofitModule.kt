@@ -1,4 +1,4 @@
-package com.example.cleanandroidarchitecture.data
+package com.example.cleanandroidarchitecture.data.network
 
 import dagger.Module
 import dagger.Provides

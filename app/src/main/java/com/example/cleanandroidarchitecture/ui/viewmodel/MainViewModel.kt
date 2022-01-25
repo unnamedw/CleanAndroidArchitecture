@@ -1,5 +1,6 @@
 package com.example.cleanandroidarchitecture.ui.viewmodel
 
+import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,11 +10,12 @@ import com.example.cleanandroidarchitecture.data.repository.PostRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.util.prefs.AbstractPreferences
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val repository: PostRepository
+    private val repository: PostRepository,
 ): BaseViewModel() {
 
     private val _post: MutableLiveData<Post> = MutableLiveData()

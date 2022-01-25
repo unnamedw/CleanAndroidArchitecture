@@ -1,5 +1,6 @@
-package com.example.cleanandroidarchitecture.data
+package com.example.cleanandroidarchitecture.data.db
 
+import com.example.cleanandroidarchitecture.data.PostDataSource
 import com.example.cleanandroidarchitecture.model.Post
 import io.reactivex.Observable
 import javax.inject.Inject

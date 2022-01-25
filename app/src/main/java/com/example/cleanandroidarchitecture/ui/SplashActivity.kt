@@ -4,12 +4,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.example.cleanandroidarchitecture.R
 import com.example.cleanandroidarchitecture.ui.viewmodel.SplashViewModel
+import com.example.cleanandroidarchitecture.ui.viewmodel.SplashViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
+    @Inject lateinit var vmFactory: SplashViewModelFactory
 
-    val vm: SplashViewModel by viewModels()
+    private val vm: SplashViewModel by lazy {
+        ViewModelProvider(this, vmFactory)[SplashViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
