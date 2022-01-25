@@ -1,14 +1,14 @@
-package com.example.rxjavatest.ui
+package com.example.cleanandroidarchitecture.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import com.example.rxjavatest.AppConstants
-import com.example.rxjavatest.R
-import com.example.rxjavatest.databinding.ActivityMainBinding
-import com.example.rxjavatest.ui.viewmodel.MainViewModel
+import com.example.cleanandroidarchitecture.AppConstants
+import com.example.cleanandroidarchitecture.R
+import com.example.cleanandroidarchitecture.databinding.ActivityMainBinding
+import com.example.cleanandroidarchitecture.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,9 +1,9 @@
-package com.example.rxjavatest.data.repository
+package com.example.cleanandroidarchitecture.data.repository
 
-import com.example.rxjavatest.data.PostDataSource
-import com.example.rxjavatest.data.PostLocalDataSource
-import com.example.rxjavatest.data.PostRemoteDataSource
-import com.example.rxjavatest.model.Post
+import com.example.cleanandroidarchitecture.data.PostDataSource
+import com.example.cleanandroidarchitecture.data.PostLocalDataSource
+import com.example.cleanandroidarchitecture.data.PostRemoteDataSource
+import com.example.cleanandroidarchitecture.model.Post
 import io.reactivex.Observable
 import javax.inject.Inject
 

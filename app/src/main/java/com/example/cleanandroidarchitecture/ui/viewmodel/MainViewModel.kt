@@ -1,11 +1,11 @@
-package com.example.rxjavatest.ui.viewmodel
+package com.example.cleanandroidarchitecture.ui.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.rxjavatest.AppConstants
-import com.example.rxjavatest.model.Post
-import com.example.rxjavatest.data.repository.PostRepository
+import com.example.cleanandroidarchitecture.AppConstants
+import com.example.cleanandroidarchitecture.model.Post
+import com.example.cleanandroidarchitecture.data.repository.PostRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

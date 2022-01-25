@@ -1,4 +1,4 @@
-package com.example.rxjavatest
+package com.example.cleanandroidarchitecture
 
 import io.reactivex.Flowable
 import io.reactivex.Observable

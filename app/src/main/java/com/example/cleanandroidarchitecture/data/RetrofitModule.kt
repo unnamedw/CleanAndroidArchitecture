@@ -1,4 +1,4 @@
-package com.example.rxjavatest.data
+package com.example.cleanandroidarchitecture.data
 
 import dagger.Module
 import dagger.Provides

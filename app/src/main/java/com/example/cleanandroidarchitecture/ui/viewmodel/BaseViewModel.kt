@@ -1,4 +1,4 @@
-package com.example.rxjavatest.ui.viewmodel
+package com.example.cleanandroidarchitecture.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable

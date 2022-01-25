@@ -1,4 +1,4 @@
-package com.example.rxjavatest.util
+package com.example.cleanandroidarchitecture.util
 
 import android.util.Log
 import androidx.annotation.MainThread

@@ -1,10 +1,8 @@
-package com.example.rxjavatest.ui.viewmodel
+package com.example.cleanandroidarchitecture.ui.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
-import javax.inject.Inject
 
 open class BaseAndroidViewModel constructor(
     application: Application

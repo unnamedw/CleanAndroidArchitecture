@@ -1,4 +1,4 @@
-package com.example.rxjavatest.model
+package com.example.cleanandroidarchitecture.model
 
 data class Post(
     val userId: Int,

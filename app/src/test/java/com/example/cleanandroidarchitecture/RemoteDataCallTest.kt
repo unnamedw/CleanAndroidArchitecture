@@ -1,8 +1,7 @@
-package com.example.rxjavatest
+package com.example.cleanandroidarchitecture
 
-import com.example.rxjavatest.data.PostRemoteDataSource
+import com.example.cleanandroidarchitecture.data.PostRemoteDataSource
 import org.junit.Before
-import org.junit.Test
 
 class RemoteDataCallTest {
 

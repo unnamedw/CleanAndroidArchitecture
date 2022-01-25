@@ -1,4 +1,4 @@
-package com.example.rxjavatest
+package com.example.cleanandroidarchitecture
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

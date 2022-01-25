@@ -1,10 +1,9 @@
-package com.example.rxjavatest.ui.viewmodel
+package com.example.cleanandroidarchitecture.ui.viewmodel
 
 import android.app.Application
 import android.os.Looper
-import com.example.rxjavatest.util.SingleLiveEvent
+import com.example.cleanandroidarchitecture.util.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
-import java.util.logging.Handler
 import javax.inject.Inject
 
 @HiltViewModel

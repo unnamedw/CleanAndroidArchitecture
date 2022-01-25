@@ -1,6 +1,6 @@
-package com.example.rxjavatest.data
+package com.example.cleanandroidarchitecture.data
 
-import com.example.rxjavatest.model.Post
+import com.example.cleanandroidarchitecture.model.Post
 import io.reactivex.Observable
 import javax.inject.Inject
 

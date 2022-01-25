@@ -1,11 +1,11 @@
-package com.example.rxjavatest.ui
+package com.example.cleanandroidarchitecture.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.example.rxjavatest.R
-import com.example.rxjavatest.ui.viewmodel.SplashViewModel
+import com.example.cleanandroidarchitecture.R
+import com.example.cleanandroidarchitecture.ui.viewmodel.SplashViewModel
 
 class SplashActivity : AppCompatActivity() {
 
