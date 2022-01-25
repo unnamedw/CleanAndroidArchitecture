@@ -1,6 +1,5 @@
 package com.example.rxjavatest.data
 
-import com.example.rxjavatest.MyApplication_HiltComponents
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
