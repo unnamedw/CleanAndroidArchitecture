@@ -1,6 +1,5 @@
 package com.example.cleanandroidarchitecture.ui.viewmodel
 
-import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,7 +9,6 @@ import com.example.cleanandroidarchitecture.data.repository.PostRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import java.util.prefs.AbstractPreferences
 import javax.inject.Inject
 
 @HiltViewModel
@@ -18,19 +16,19 @@ class MainViewModel @Inject constructor(
     private val repository: PostRepository,
 ): BaseViewModel() {
 
-    private val _post: MutableLiveData<Post> = MutableLiveData()
-    val post: LiveData<Post> get() = _post
+    private val _posts: MutableLiveData<List<Post>> = MutableLiveData()
+    val post: LiveData<List<Post>> get() = _posts
 
     fun fetchData() {
         Log.d(AppConstants.TAG, "fetchData called!")
         val samplePostId = 1
 
-        disposable.add(repository.getPost(samplePostId)
+        disposable.add(repository.getAllPosts()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ post ->
+            .subscribe({ posts ->
                 Log.d(AppConstants.TAG, "postData >> $post")
-                _post.value = post
+                _posts.value = posts
             }, { t ->
                 Log.e(AppConstants.TAG, "fetchData 에러! >> ", t)
                 t.printStackTrace()

@@ -10,7 +10,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class SplashViewModel constructor(
+@HiltViewModel
+class SplashViewModel @Inject constructor(
     application: Application,
     private val repository: PostRepository
 ): BaseAndroidViewModel(application) {

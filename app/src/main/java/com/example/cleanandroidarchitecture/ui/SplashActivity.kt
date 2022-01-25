@@ -13,11 +13,13 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
-    @Inject lateinit var vmFactory: SplashViewModelFactory
+//    @Inject lateinit var vmFactory: SplashViewModelFactory
 
-    private val vm: SplashViewModel by lazy {
-        ViewModelProvider(this, vmFactory)[SplashViewModel::class.java]
-    }
+//    private val vm: SplashViewModel by lazy {
+//        ViewModelProvider(this, vmFactory)[SplashViewModel::class.java]
+//    }
+
+    private val vm: SplashViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

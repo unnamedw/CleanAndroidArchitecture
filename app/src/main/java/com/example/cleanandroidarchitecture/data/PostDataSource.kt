@@ -7,4 +7,6 @@ interface PostDataSource {
 
     fun getPost(id: Int): Observable<Post?>
 
+    fun getAllPosts(): Observable<List<Post>?>
+
 }

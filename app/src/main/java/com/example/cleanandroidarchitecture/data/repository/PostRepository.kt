@@ -16,5 +16,8 @@ class PostRepository @Inject constructor(
         return remoteDataSource.getPost(id)
     }
 
+    override fun getAllPosts(): Observable<List<Post>?> {
+        return remoteDataSource.getAllPosts()
+    }
 
 }

@@ -12,4 +12,8 @@ class PostRemoteDataSource @Inject constructor(
     override fun getPost(id: Int): Observable<Post?> {
         return postApi.getPost(id)
     }
+
+    override fun getAllPosts(): Observable<List<Post>?> {
+        return postApi.getAllPosts()
+    }
 }

@@ -9,4 +9,8 @@ class PostLocalDataSource @Inject constructor(): PostDataSource {
     override fun getPost(id: Int): Observable<Post?> {
         return Observable.just(null)
     }
+
+    override fun getAllPosts(): Observable<List<Post>?> {
+        return Observable.just(null)
+    }
 }
