@@ -1,7 +1,11 @@
 package com.example.cleanandroidarchitecture.ui.viewmodel
 
 import android.app.Application
+import android.content.Context
+import android.net.ConnectivityManager
+import android.os.Build
 import android.os.Looper
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.cleanandroidarchitecture.data.repository.PostRepository
@@ -26,7 +30,6 @@ class SplashViewModel @Inject constructor(
             _moveToMainEvent.call()
         }, 1500L)
     }
-
 }
 
 class SplashViewModelFactory @Inject constructor(

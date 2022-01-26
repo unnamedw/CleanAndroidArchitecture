@@ -4,12 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.example.cleanandroidarchitecture.R
 import com.example.cleanandroidarchitecture.ui.viewmodel.SplashViewModel
-import com.example.cleanandroidarchitecture.ui.viewmodel.SplashViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
