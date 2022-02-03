@@ -10,11 +10,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
-//    @Inject lateinit var vmFactory: SplashViewModelFactory
-
-//    private val vm: SplashViewModel by lazy {
-//        ViewModelProvider(this, vmFactory)[SplashViewModel::class.java]
-//    }
 
     private val vm: SplashViewModel by viewModels()
 
@@ -25,10 +20,22 @@ class SplashActivity : AppCompatActivity() {
 
         vm.init()
         vm.moveToMainEvent.observe(this, {
-            val mainIntent = Intent(this@SplashActivity, MainActivity::class.java)
-            mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            mainIntent.addFlags(Intent.FLAG_ACTIVITY_TASK_ON_HOME)
-            startActivity(mainIntent)
+            moveToMainActivity()
         })
+
+        moveToDetailActivity()
+
+    }
+
+    private fun moveToMainActivity() {
+        val mainIntent = Intent(this@SplashActivity, MainActivity::class.java)
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_TASK_ON_HOME)
+        startActivity(mainIntent)
+    }
+
+    private fun moveToDetailActivity() {
+        val detailIntent = Intent(this@SplashActivity, DetailActivity::class.java)
+        startActivity(detailIntent)
     }
 }

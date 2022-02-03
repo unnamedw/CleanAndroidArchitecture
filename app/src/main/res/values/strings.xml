@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CleanAndroidArchitecture</string>
+    <string name="test_string">hello!</string>
 </resources>

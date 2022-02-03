@@ -13,4 +13,5 @@ interface PostApi {
 
     @GET("posts")
     fun getAllPosts(): Observable<List<Post>?>
+
 }
