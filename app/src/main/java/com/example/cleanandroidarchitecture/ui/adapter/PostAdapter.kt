@@ -7,21 +7,36 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanandroidarchitecture.AppConstants
 import com.example.cleanandroidarchitecture.R
+import com.example.cleanandroidarchitecture.databinding.ItemPost2Binding
 import com.example.cleanandroidarchitecture.databinding.ItemPostBinding
-import com.example.cleanandroidarchitecture.ui.viewmodel.PostItemUiState
+import com.example.cleanandroidarchitecture.model.PostItemUiState
+import com.example.cleanandroidarchitecture.model.UiState
 
 class PostAdapter(
     private var dataSet: Array<PostItemUiState> = emptyArray()
-): RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+): RecyclerView.Adapter<BaseViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val itemBinding = DataBindingUtil
-            .inflate<ItemPostBinding>(layoutInflater, R.layout.item_post, parent, false)
-        return ViewHolder(binding = itemBinding)
+    companion object {
+        const val VIEW_TYPE_FIRST = 0
+        const val VIEW_TYPE_SECOND = 1
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        return when(viewType) {
+            VIEW_TYPE_FIRST -> {
+                FirstViewHolder(binding = DataBindingUtil
+                    .inflate(layoutInflater, R.layout.item_post, parent, false))
+            }
+            VIEW_TYPE_SECOND ->
+                SecondViewHolder(binding = DataBindingUtil
+                    .inflate(layoutInflater, R.layout.item_post2, parent, false))
+            else -> FirstViewHolder(binding = DataBindingUtil
+                .inflate(layoutInflater, R.layout.item_post, parent, false))
+        }
+    }
+
+    override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         holder.bind(dataSet[position])
     }
 
@@ -29,13 +44,17 @@ class PostAdapter(
         return dataSet.size
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return position%2
+    }
+
     fun submitDataSet(data: Array<PostItemUiState>) {
         dataSet = data
         notifyDataSetChanged()
     }
 
-    class ViewHolder(
-        private val binding: ItemPostBinding) : RecyclerView.ViewHolder(binding.root) {
+    class FirstViewHolder(
+        private val binding: ItemPostBinding) : BaseViewHolder(binding.root) {
 
         init {
             binding.root.setOnClickListener {
@@ -44,10 +63,29 @@ class PostAdapter(
             }
         }
 
-        fun bind(state: PostItemUiState) {
-            binding.state = state
+        override fun <T : UiState> bind(state: T) {
+            binding.state = state as PostItemUiState
             binding.executePendingBindings()
         }
     }
+
+    class SecondViewHolder(
+        private val binding: ItemPost2Binding) : BaseViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                Log.d(AppConstants.TAG_APPLICATION, "click")
+                binding.state?.onClick?.invoke()
+            }
+        }
+
+        override fun <T : UiState> bind(state: T) {
+            binding.state = state as PostItemUiState
+            binding.executePendingBindings()
+        }
+
+    }
+
+
 
 }

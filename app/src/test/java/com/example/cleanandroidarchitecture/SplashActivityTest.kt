@@ -18,9 +18,10 @@ import org.robolectric.shadows.ShadowLooper
 class SplashActivityTest {
 
     @Test
-    fun 스플래시화면_일정시간_후_메인액티비티로_이동() {
+    fun 스플래시화면_일정시간_후_메인액티비티로_이동하는지_테스트() {
         ActivityScenario.launch(SplashActivity::class.java).use { scenario ->
             scenario.onActivity { activity: SplashActivity ->
+                // 초기 화면은 DetailActivity -> 딜레이 후 MainActivity
                 val expectedIntentBeforeDelay = Intent(activity, DetailActivity::class.java)
                 val expectedIntentAfterDelay = Intent(activity, MainActivity::class.java)
                 var actual = Shadows.shadowOf(RuntimeEnvironment.getApplication()).nextStartedActivity

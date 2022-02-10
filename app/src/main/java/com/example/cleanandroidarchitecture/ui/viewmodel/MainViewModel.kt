@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.cleanandroidarchitecture.AppConstants
-import com.example.cleanandroidarchitecture.model.Post
 import com.example.cleanandroidarchitecture.data.repository.PostRepository
+import com.example.cleanandroidarchitecture.model.PostItemUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
