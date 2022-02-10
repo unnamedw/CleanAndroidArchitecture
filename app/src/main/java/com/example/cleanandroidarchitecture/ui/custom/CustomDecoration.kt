@@ -11,49 +11,35 @@ import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanandroidarchitecture.ui.adapter.PostAdapter
 
-class CustomDecoration : RecyclerView.ItemDecoration {
+class CustomDecoration(context: Context) : RecyclerView.ItemDecoration() {
 
     companion object {
         private const val VIEW_TYPE_FIRST_DIVIDER_COLOR = Color.BLUE
         private const val VIEW_TYPE_SECOND_DIVIDER_COLOR = Color.RED
     }
 
-    private val viewTypeFirstPaint: Paint
-    private val viewTypeSecondPaint: Paint
-
-    private val viewTypeFirstHeightDp: Int
-    private val viewTypeFirstLeftMarginDp: Int
-    private val viewTypeFirstRightMarginDp: Int
-
-    private val viewTypeSecondHeightDp: Int
-    private val viewTypeSecondLeftMarginDp: Int
-    private val viewTypeSecondRightMarginDp: Int
-
-    constructor(context: Context) {
-        viewTypeFirstPaint = Paint().apply {
-            style = Paint.Style.FILL
-            color = VIEW_TYPE_FIRST_DIVIDER_COLOR
-        }
-
-        viewTypeSecondPaint = Paint().apply {
-            style = Paint.Style.FILL
-            color = VIEW_TYPE_SECOND_DIVIDER_COLOR
-        }
-
-        this.viewTypeFirstHeightDp = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-            1f, context.resources.displayMetrics).toInt()
-        this.viewTypeFirstLeftMarginDp = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-            20f, context.resources.displayMetrics).toInt()
-        this.viewTypeFirstRightMarginDp = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-            20f, context.resources.displayMetrics).toInt()
-
-        this.viewTypeSecondHeightDp = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-            2f, context.resources.displayMetrics).toInt()
-        this.viewTypeSecondLeftMarginDp = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-            40f, context.resources.displayMetrics).toInt()
-        this.viewTypeSecondRightMarginDp = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-            40f, context.resources.displayMetrics).toInt()
+    private val viewTypeFirstPaint: Paint = Paint().apply {
+        style = Paint.Style.FILL
+        color = VIEW_TYPE_FIRST_DIVIDER_COLOR
     }
+    private val viewTypeSecondPaint: Paint = Paint().apply {
+        style = Paint.Style.FILL
+        color = VIEW_TYPE_SECOND_DIVIDER_COLOR
+    }
+
+    private val viewTypeFirstHeightDp: Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+        1f, context.resources.displayMetrics).toInt()
+    private val viewTypeFirstLeftMarginDp: Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+        20f, context.resources.displayMetrics).toInt()
+    private val viewTypeFirstRightMarginDp: Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+        20f, context.resources.displayMetrics).toInt()
+
+    private val viewTypeSecondHeightDp: Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+        2f, context.resources.displayMetrics).toInt()
+    private val viewTypeSecondLeftMarginDp: Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+        40f, context.resources.displayMetrics).toInt()
+    private val viewTypeSecondRightMarginDp: Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+        40f, context.resources.displayMetrics).toInt()
 
     override fun getItemOffsets(
         outRect: Rect,
