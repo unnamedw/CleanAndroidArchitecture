@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanandroidarchitecture.ui.adapter.PostAdapter
 
 class CustomDecoration(context: Context) : RecyclerView.ItemDecoration() {
-
+    // 색상
     companion object {
         private const val VIEW_TYPE_FIRST_DIVIDER_COLOR = Color.BLUE
         private const val VIEW_TYPE_SECOND_DIVIDER_COLOR = Color.RED
