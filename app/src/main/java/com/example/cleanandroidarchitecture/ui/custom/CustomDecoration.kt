@@ -11,6 +11,7 @@ import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cleanandroidarchitecture.ui.adapter.PostAdapter
 
+// 커스텀 데코
 class CustomDecoration(context: Context) : RecyclerView.ItemDecoration() {
 
     companion object {
