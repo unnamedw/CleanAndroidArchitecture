@@ -13,7 +13,7 @@ import com.example.cleanandroidarchitecture.ui.adapter.PostAdapter
 
 // 커스텀 데코
 class CustomDecoration(context: Context) : RecyclerView.ItemDecoration() {
-
+    // 색상
     companion object {
         private const val VIEW_TYPE_FIRST_DIVIDER_COLOR = Color.BLUE
         private const val VIEW_TYPE_SECOND_DIVIDER_COLOR = Color.RED
